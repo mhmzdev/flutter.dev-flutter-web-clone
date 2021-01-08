@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterdev/animations/bottomAnimation.dart';
 import 'package:flutterdev/social_icon_icons.dart';
@@ -116,11 +117,73 @@ class TopHeader extends StatelessWidget {
 class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Container(
-      padding: EdgeInsets.fromLTRB(0, 50.0, 0, 0),
+      padding: EdgeInsets.fromLTRB(0, 70.0, 0, 0),
       child: WidgetAnimator(
-        Center(
-          child: Image.asset("assets/frame.png"),
+        Stack(
+          children: [
+            Positioned(
+              top: height * 0.1,
+              left: width / 2.5,
+              child: Image.network(
+                'https://flutter.dev/assets/homepage/carousel/slide_1-bg-4e2fcef9a7343692a5f7784d68241a786c57c79d55f0fe37e6b82a653d146b93.jpg',
+                height: height * 0.5,
+              ),
+            ),
+            Align(
+                alignment: Alignment.center,
+                child: Image.network(
+                  "https://flutter.dev/assets/homepage/carousel/phone_bezel-467ab8d838e5e2d2d3f347f766173ccc365220223692215416e4ce7342f2212f.png",
+                  height: height * 0.7,
+                )),
+            Positioned(
+              top: height * 0.25,
+              left: width / 5.2,
+              child: Row(
+                children: [
+                  Text(
+                    "Design",
+                    style: TextStyle(
+                      fontSize: height * 0.125,
+                      color: Colors.blueAccent,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(1.0, 1.0),
+                          blurRadius: 8.0,
+                          color: Colors.black38,
+                        ),
+                        // ),
+                      ],
+                    ),
+                  ),
+                  Text(
+                    " beautiful",
+                    style: TextStyle(shadows: <Shadow>[
+                      Shadow(
+                        offset: Offset(1.0, 1.0),
+                        blurRadius: 8.0,
+                        color: Colors.black38,
+                      ),
+                      // ),
+                    ], fontSize: height * 0.125, color: Colors.white),
+                  ),
+                  Text(
+                    " apps",
+                    style: TextStyle(shadows: <Shadow>[
+                      Shadow(
+                        offset: Offset(1.0, 1.0),
+                        blurRadius: 8.0,
+                        color: Colors.black38,
+                      ),
+                      // ),
+                    ], fontSize: height * 0.125, color: Colors.blueAccent),
+                  ),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );
