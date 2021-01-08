@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdev/animations/bottomAnimation.dart';
 import 'package:flutterdev/social_icon_icons.dart';
 
 class HomePage extends StatefulWidget {
@@ -116,8 +117,11 @@ class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Image.asset("assets/frame.png"),
+      padding: EdgeInsets.fromLTRB(0, 50.0, 0, 0),
+      child: WidgetAnimator(
+        Center(
+          child: Image.asset("assets/frame.png"),
+        ),
       ),
     );
   }
