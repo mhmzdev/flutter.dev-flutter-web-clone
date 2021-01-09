@@ -5,6 +5,7 @@ import 'package:flutterdev/views/homePageBody/flutterFeatures.dart';
 import 'package:flutterdev/views/homePageBody/frameContainer.dart';
 import 'package:flutterdev/views/homePageBody/madeByGoogle.dart';
 import 'package:flutterdev/views/homePageBody/topHeader.dart';
+import 'package:flutterdev/views/homePageBody/tryFlutter.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -47,14 +48,21 @@ class _HomePageState extends State<HomePage> {
         title: WebLogo(),
         actions: _appBarActions,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            TopHeader(),
-            FrameContainer(),
-            MadeByGoogle(),
-            FlutterFeatures()
-          ],
+      body: Scrollbar(
+        thickness: 10.0,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              TopHeader(),
+              FrameContainer(),
+              MadeByGoogle(),
+              FlutterFeatures(),
+              TryFlutter(),
+              SizedBox(
+                height: 100,
+              )
+            ],
+          ),
         ),
       ),
     );

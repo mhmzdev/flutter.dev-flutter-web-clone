@@ -57,7 +57,7 @@ class FeatureContainer extends StatelessWidget {
             ),
             CircleAvatar(
                 maxRadius: 30,
-                backgroundColor: Colors.blue.withAlpha(80),
+                backgroundColor: Colors.blue.withAlpha(50),
                 child: Image.network(networkImage)),
             SizedBox(
               height: 20,
