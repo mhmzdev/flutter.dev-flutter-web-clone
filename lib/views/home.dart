@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdev/custom/webLogo.dart';
 import 'package:flutterdev/social_icon_icons.dart';
+import 'package:flutterdev/views/homePageBody/flutterFeatures.dart';
 import 'package:flutterdev/views/homePageBody/frameContainer.dart';
+import 'package:flutterdev/views/homePageBody/madeByGoogle.dart';
 import 'package:flutterdev/views/homePageBody/topHeader.dart';
 
 class HomePage extends StatefulWidget {
@@ -50,6 +52,8 @@ class _HomePageState extends State<HomePage> {
           children: [
             TopHeader(),
             FrameContainer(),
+            MadeByGoogle(),
+            FlutterFeatures()
           ],
         ),
       ),

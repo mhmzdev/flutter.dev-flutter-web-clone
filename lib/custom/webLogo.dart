@@ -7,12 +7,15 @@ class WebLogo extends StatelessWidget {
     return Row(
       children: [
         Image.asset('assets/flutter.png', height: height * 0.05),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.006
+        ),
         Text(
           "Flutter",
           style: TextStyle(
               fontSize: height * 0.04,
               color: Colors.grey[600],
-              fontWeight: FontWeight.w100),
+              fontWeight: FontWeight.w400),
         )
       ],
     );
