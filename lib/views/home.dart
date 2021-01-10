@@ -6,6 +6,7 @@ import 'package:flutterdev/views/homePageBody/featureDetail.dart';
 import 'package:flutterdev/views/homePageBody/flutterFeatures.dart';
 import 'package:flutterdev/views/homePageBody/frameContainer.dart';
 import 'package:flutterdev/views/homePageBody/madeByGoogle.dart';
+import 'package:flutterdev/views/homePageBody/news.dart';
 import 'package:flutterdev/views/homePageBody/topHeader.dart';
 import 'package:flutterdev/views/homePageBody/tryFlutter.dart';
 import 'package:flutterdev/views/homePageBody/whosUsingFlutter.dart';
@@ -152,6 +153,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               WhosUsingFlutter(),
+              News(),
               SizedBox(
                 height: 100,
               )
