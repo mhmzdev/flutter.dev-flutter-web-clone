@@ -21,7 +21,7 @@ In case you want to contribute, please feel free to create pull request :)
 - Making the page responsive
 - Adding missing `URL` using the same package (Will do it soon)
 
-## Make sure to 🌟 the Repo!
+#### Make sure to 🌟 the Repo!
 
 ## Author
 
