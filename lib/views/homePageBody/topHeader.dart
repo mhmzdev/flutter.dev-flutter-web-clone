@@ -8,9 +8,13 @@ class TopHeader extends StatelessWidget {
       width: double.infinity,
       height: 65,
       child: Center(
-        child: Text(
-          "Migrate your packages to null safety!",
-          style: TextStyle(fontSize: 22, color: Colors.lightBlue),
+        child: FlatButton(
+          onPressed: () {},
+          child: Text(
+            "Migrate your packages to null safety!",
+            style: TextStyle(
+                fontSize: 22, color: Colors.lightBlue[400], fontWeight: FontWeight.w500),
+          ),
         ),
       ),
     );
