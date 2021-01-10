@@ -5,6 +5,7 @@ import 'package:flutterdev/social_icon_icons.dart';
 import 'package:flutterdev/views/homePageBody/featureDetail.dart';
 import 'package:flutterdev/views/homePageBody/flutterFeatures.dart';
 import 'package:flutterdev/views/homePageBody/frameContainer.dart';
+import 'package:flutterdev/views/homePageBody/installFlutter.dart';
 import 'package:flutterdev/views/homePageBody/madeByGoogle.dart';
 import 'package:flutterdev/views/homePageBody/news.dart';
 import 'package:flutterdev/views/homePageBody/topHeader.dart';
@@ -154,6 +155,7 @@ class _HomePageState extends State<HomePage> {
               ),
               WhosUsingFlutter(),
               News(),
+              InstallFlutter(),
               SizedBox(
                 height: 100,
               )
