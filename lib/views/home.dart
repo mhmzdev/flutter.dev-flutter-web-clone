@@ -20,6 +20,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  _launchURL(url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   final _appBarActions = [
     AppBarTextBtn(btnText: "Docs"),
     AppBarTextBtn(btnText: "Showcase"),
@@ -33,7 +41,14 @@ class _HomePageState extends State<HomePage> {
       child: FlatButton(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
         color: Colors.blueAccent,
-        onPressed: () {},
+        onPressed: () async {
+          if (await canLaunch(
+              "https://flutter.dev/docs/get-started/install/")) {
+            await launch("https://flutter.dev/docs/get-started/install/");
+          } else {
+            throw 'Could not launch ';
+          }
+        },
         child: Text(
           "Get Started",
           style: TextStyle(
@@ -44,14 +59,6 @@ class _HomePageState extends State<HomePage> {
       ),
     )
   ];
-
-  _launchURL(url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -186,12 +193,28 @@ class _HomePageState extends State<HomePage> {
 }
 
 class AppBarTextBtn extends StatelessWidget {
+  _launchURL(url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   final String btnText;
   AppBarTextBtn({@required this.btnText});
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-      onPressed: () {},
+      onPressed: () {
+        if (btnText == "Docs") {
+          _launchURL("https://flutter.dev/docs");
+        } else if (btnText == "Showcase") {
+          _launchURL("https://flutter.dev/showcase");
+        } else {
+          _launchURL("https://flutter.dev/community");
+        }
+      },
       child: Text(
         btnText,
         style: TextStyle(
@@ -208,13 +231,30 @@ class AppBarIconBtn extends StatelessWidget {
   final IconData btnIcon;
   final double paddingValue;
   AppBarIconBtn({@required this.btnIcon, @required this.paddingValue});
+
+  _launchURL(url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(paddingValue),
       child: IconButton(
         icon: Icon(btnIcon, color: Colors.grey[600]),
-        onPressed: () {},
+        onPressed: () {
+          if (btnIcon == SocialIcon.twitter) {
+            _launchURL("https://twitter.com/flutterdev");
+          } else if (btnIcon == SocialIcon.youtube) {
+            _launchURL("https://www.youtube.com/flutterdev");
+          } else if (btnIcon == SocialIcon.github_circled) {
+            _launchURL("https://github.com/flutter");
+          }
+        },
       ),
     );
   }

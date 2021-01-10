@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Beautiful native apps in record time',
+      title: 'Flutter - Beautiful native apps in record time',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

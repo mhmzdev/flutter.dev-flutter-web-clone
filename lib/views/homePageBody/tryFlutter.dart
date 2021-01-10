@@ -30,6 +30,7 @@ class TryFlutter extends StatelessWidget {
               height: 40,
             ),
             Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   "Want more practice? ",
