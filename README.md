@@ -21,6 +21,20 @@ In case you want to contribute, please feel free to create pull request :)
 - Making the page responsive
 - Adding missing `URL` using the same package (Will do it soon)
 
+## Make sure to 🌟 the Repo!
+
+## Author
+
+#### Muhammad Hamza 🧑
+[![LinkedIn Link](https://img.shields.io/badge/Connect-Hamza-blue.svg?logo=linkedin&longCache=true&style=social&label=Connect
+)](https://www.linkedin.com/in/mhamzadev)
+
+👉 You can also follow my GitHub Profile to stay updated about my latest projects:
+
+[![GitHub Follow](https://img.shields.io/badge/Connect-Hamza-blue.svg?logo=Github&longCache=true&style=social&label=Follow)](https://github.com/m-hamzashakeel)
+
+Copyright (c) 2020 MUHAMMAD HAMZA
+
 ## 🔑 LICENSE
 - This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details
 
