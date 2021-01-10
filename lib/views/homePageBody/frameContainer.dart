@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterdev/animations/bottomAnimation.dart';
 
 class FrameContainer extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;

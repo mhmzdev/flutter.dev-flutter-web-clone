@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdev/custom/whiteContainer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class News extends StatelessWidget {
   @override
@@ -42,6 +43,14 @@ class NewsContainer extends StatelessWidget {
   final String networkImageURL;
   final String newsTitle;
 
+  _launchURL(url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   NewsContainer({this.networkImageURL, this.newsTitle});
   @override
   Widget build(BuildContext context) {
@@ -67,7 +76,13 @@ class NewsContainer extends StatelessWidget {
           height: 20,
         ),
         FlatButton(
-          onPressed: () {},
+          onPressed: () {
+            newsTitle == "Announcing Flutter 1.22"
+                ? _launchURL(
+                    "https://medium.com/flutter/announcing-flutter-1-22-44f146009e5f")
+                : _launchURL(
+                    "https://medium.com/flutter/announcing-flutter-windows-alpha-33982cd0f433");
+          },
           child: Text(
             "Read More",
             style: TextStyle(fontSize: 17),

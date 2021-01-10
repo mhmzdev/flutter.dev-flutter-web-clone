@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdev/custom/whiteContainer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class InstallFlutter extends StatelessWidget {
+  _launchURL(url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return WhiteContainer(
@@ -32,7 +41,9 @@ class InstallFlutter extends StatelessWidget {
             child: FlatButton(
               textColor: Colors.white,
               color: Colors.blue,
-              onPressed: () {},
+              onPressed: () {
+                _launchURL("https://flutter.dev/docs/get-started/install");
+              },
               child: Text(
                 "Get Started",
                 style: TextStyle(fontSize: 20, letterSpacing: 1.0),

@@ -4,6 +4,7 @@ import 'package:flutterdev/custom/whiteContainer.dart';
 import 'package:flutterdev/social_icon_icons.dart';
 import 'package:flutterdev/views/homePageBody/featureDetail.dart';
 import 'package:flutterdev/views/homePageBody/flutterFeatures.dart';
+import 'package:flutterdev/views/homePageBody/footer.dart';
 import 'package:flutterdev/views/homePageBody/frameContainer.dart';
 import 'package:flutterdev/views/homePageBody/installFlutter.dart';
 import 'package:flutterdev/views/homePageBody/madeByGoogle.dart';
@@ -11,6 +12,7 @@ import 'package:flutterdev/views/homePageBody/news.dart';
 import 'package:flutterdev/views/homePageBody/topHeader.dart';
 import 'package:flutterdev/views/homePageBody/tryFlutter.dart';
 import 'package:flutterdev/views/homePageBody/whosUsingFlutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -43,6 +45,14 @@ class _HomePageState extends State<HomePage> {
     )
   ];
 
+  _launchURL(url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +77,10 @@ class _HomePageState extends State<HomePage> {
                 child: Center(
                   child: FeatureDetail(
                     bottomWidget: FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _launchURL(
+                            "https://flutter.dev/docs/development/tools/hot-reload");
+                      },
                       child: Text(
                         "Learn More",
                         style: TextStyle(color: Colors.blue),
@@ -90,7 +103,10 @@ class _HomePageState extends State<HomePage> {
                 child: Center(
                   child: FeatureDetail(
                     bottomWidget: FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _launchURL(
+                            "https://flutter.dev/docs/development/ui/widgets");
+                      },
                       child: Text(
                         "Browse the widget catalog",
                         style: TextStyle(color: Colors.blue),
@@ -113,7 +129,9 @@ class _HomePageState extends State<HomePage> {
                 child: Center(
                   child: FeatureDetail(
                     bottomWidget: FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _launchURL("https://flutter.dev/showcase");
+                      },
                       child: Text(
                         "Examples of apps built with Flutter",
                         style: TextStyle(color: Colors.blue),
@@ -136,7 +154,9 @@ class _HomePageState extends State<HomePage> {
                 child: Center(
                   child: FeatureDetail(
                     bottomWidget: FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _launchURL("https://www.youtube.com/flutterdev");
+                      },
                       child: Text(
                         "Visit our YouTube playlist",
                         style: TextStyle(color: Colors.blue),
@@ -156,9 +176,7 @@ class _HomePageState extends State<HomePage> {
               WhosUsingFlutter(),
               News(),
               InstallFlutter(),
-              SizedBox(
-                height: 100,
-              )
+              Footer(),
             ],
           ),
         ),

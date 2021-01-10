@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdev/custom/whiteContainer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TryFlutter extends StatelessWidget {
+  _launchURL(url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return WhiteContainer(
@@ -20,9 +29,22 @@ class TryFlutter extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Text(
-              "Want more practice? Try a codelab.",
-              style: TextStyle(fontSize: 30),
+            Row(
+              children: [
+                Text(
+                  "Want more practice? ",
+                  style: TextStyle(fontSize: 30),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    _launchURL("https://flutter.dev/codelabs");
+                  },
+                  child: Text(
+                    "Try a codelab.",
+                    style: TextStyle(fontSize: 30, color: Colors.blue),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

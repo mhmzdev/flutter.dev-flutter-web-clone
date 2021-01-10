@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdev/custom/whiteContainer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WhosUsingFlutter extends StatelessWidget {
   @override
@@ -21,6 +22,14 @@ class WhosUsingFlutter extends StatelessWidget {
 }
 
 class TextualInfo extends StatelessWidget {
+  _launchURL(url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -47,7 +56,9 @@ class TextualInfo extends StatelessWidget {
             height: 20,
           ),
           FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              _launchURL("https://flutter.dev/showcase");
+            },
             child: Text("See what’s being created"),
             textColor: Colors.blue,
           )

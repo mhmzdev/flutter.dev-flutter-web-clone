@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterdev/custom/whiteContainer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MadeByGoogle extends StatelessWidget {
   @override
@@ -72,6 +73,14 @@ class FlutterAbout extends StatelessWidget {
 }
 
 class GetStartedAndVideoBtns extends StatelessWidget {
+  _launchURL(url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -83,7 +92,9 @@ class GetStartedAndVideoBtns extends StatelessWidget {
           child: FlatButton(
             padding: EdgeInsets.all(20.0),
             color: Colors.blue,
-            onPressed: () {},
+            onPressed: () {
+              _launchURL("https://flutter.dev/docs/get-started/install");
+            },
             child: Text(
               "Get Started",
               style: TextStyle(
@@ -97,7 +108,10 @@ class GetStartedAndVideoBtns extends StatelessWidget {
         FlatButton(
           hoverColor: Colors.transparent,
           padding: EdgeInsets.all(20.0),
-          onPressed: () {},
+          onPressed: () {
+            _launchURL(
+                "https://www.youtube.com/watch?v=5VbAwhBBHsg&feature=youtu.be&ab_channel=GoogleDevelopers");
+          },
           child: Row(
             children: [
               Icon(
