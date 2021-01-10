@@ -1,16 +1,29 @@
-# flutterdev
+<h1 align="center" style="font-size: 48px;"> <img width=40 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/flutter/flutter.png" > Flutter Official - Home Page Clone</h1>
 
-A new Flutter project.
+[Flutter Official Site][flutterdev] clone using Flutter Web. Try the live site [here][live-link]. For the time being its not responsive fully so there might be issues considering the layout on your screen.
 
-## Getting Started
+*Reload the `live link` in case few images doesn't load*
 
-This project is a starting point for a Flutter application.
+### 📝 Note
+- For the opening animation. For the time being there is only one animating design. Will work with others and add them soon
+- I have used [url_launcher][url-launcher] package for linking the page with other link as in the original home page
+- Considering the `Try flutter in your browser` it is just a simple `TextField`. Don't try to compile the code :p
 
-A few resources to get you started if this is your first Flutter project:
+## 💻 Demo
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<img src="https://user-images.githubusercontent.com/43790152/104135041-51b30100-53af-11eb-836f-9dc1de7bade3.gif" >
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🔴 What can be improved
+
+In case you want to contribute, please feel free to create pull request :)
+
+- Adding all animation design in the opening panel i.e. `Design beautiful app` animation
+- Making the page responsive
+- Adding missing `URL` using the same package (Will do it soon)
+
+## 🔑 LICENSE
+- This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details
+
+[flutterdev]: https://flutter.dev
+[live-link]: https://m-hamzashakeel.github.io/flutterdev
+[url-launcher]: https://pub.dev/packages/url_launcher
