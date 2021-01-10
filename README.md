@@ -1,4 +1,4 @@
-<h1 align="center" style="font-size: 48px;"> <img width=40 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/flutter/flutter.png" > Flutter Official - Home Page Clone</h1>
+<h1 align="center" style="font-size: 48px;"> <img width=30 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/flutter/flutter.png" > Flutter Official - Home Page Clone</h1>
 
 [Flutter Official Site][flutterdev] clone using Flutter Web. Try the live site [here][live-link]. For the time being its not responsive fully so there might be issues considering the layout on your screen.
 
